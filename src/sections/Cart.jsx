@@ -1,6 +1,10 @@
-import { VStack, Flex, Box, Divider, Heading, Text, Button, List, ListItem, AspectRatio, Image } from '@chakra-ui/react'
+import { VStack, Flex, Box, Divider, Heading, Text, Button, List, ListItem, AspectRatio, Image, useColorMode, useColorModeValue } from '@chakra-ui/react'
 
 const Cart = () => {
+  const { toggleColorMode } = useColorMode()
+  const bgColor = useColorModeValue("gray.50", "whiteAlpha.50")
+  const secondaryTextColor = useColorModeValue("black", "white")
+
   return (
     <VStack
       w="full"
@@ -8,13 +12,13 @@ const Cart = () => {
       p={10}
       spacing={10}
       alignItems="flex-start"
-      bg="gray.50"
+      bg={bgColor}
     >
       <VStack spacing={3} alignItems="flex-start">
         <Heading size="2xl">Your cart</Heading>
         <Text>
           If the price is too hard on your eyes,
-          <Button variant="link" colorScheme="black">
+          <Button onClick={toggleColorMode} variant="link" colorScheme="black">
             try changing the theme.
           </Button>
         </Text>
@@ -29,33 +33,33 @@ const Cart = () => {
               </Box>
               <Box>
                 <Flex flexDirection="column">
-                 <Text as="b" color="black">Penny board</Text> 
+                 <Text as="b" color={secondaryTextColor}>Penny board</Text> 
                  <Text textTransform="uppercase">pnycomp27541</Text> 
                 </Flex> 
               </Box>
              </Flex> 
             </Box>
             <Box>
-              <Text color="black" as="b">$119.00</Text>
+              <Text color={secondaryTextColor} as="b">$119.00</Text>
             </Box>
           </Flex>
         </ListItem>
         <ListItem>
           <Flex justifyContent="space-between">
             <Text>Subtotal</Text>
-            <Text color="black" as="b">$119.00</Text>
+            <Text color={secondaryTextColor} as="b">$119.00</Text>
           </Flex>
         </ListItem>
         <ListItem>
           <Flex justifyContent="space-between">
             <Text>Shipping</Text>
-            <Text color="black" as="b">$19.99</Text>
+            <Text color={secondaryTextColor} as="b">$19.99</Text>
           </Flex>
         </ListItem>
         <ListItem>
           <Flex justifyContent="space-between">
             <Text>Taxes (estimated)</Text>
-            <Text color="black" as="b">$23.80</Text>
+            <Text color={secondaryTextColor} as="b">$23.80</Text>
           </Flex>
         </ListItem>
         <ListItem>
