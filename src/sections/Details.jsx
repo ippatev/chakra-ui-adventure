@@ -28,7 +28,7 @@ const Details = () => {
            <Input placeholder="Jones" />
           </FormControl>
         </GridItem>
-        <GridItem colSpan={colSpan}>
+        <GridItem colSpan={2}>
           <FormControl>
            <FormLabel>Address</FormLabel>
            <Input placeholder="Blvd. Broken Dreams 42" />
@@ -55,7 +55,7 @@ const Details = () => {
           <Checkbox defaultChecked>Ship to billing address.</Checkbox>
         </GridItem>
         <GridItem colSpan={2}>
-          <Button colorScheme="brand" size="lg" w="full">Place Order</Button>
+          <Button size="lg" w="full">Place Order</Button>
         </GridItem>
       </SimpleGrid>
     </VStack>
